@@ -174,7 +174,9 @@ firing a `location-changed` event on `window`. i.e.
         ],
 
         __computeRoutePath: function() {
-          this.path = this.useHashAsPath ? this.__hash : this.__path;
+          var path = this.useHashAsPath ? this.__hash : this.__path;
+
+          this.path = path.match(/^(.*?)\/*$/)[1];
         },
 
         __onPathChanged: function() {
