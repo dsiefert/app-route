@@ -238,8 +238,8 @@ the `app-route` will update `route.path`. This in-turn will update the
       __resetProperties: function() {
         this._setActive(false);
         this._matched = null;
-        //this.tail = { path: null, prefix: null, queryParams: null };
-        //this.data = {};
+        this.tail = { path: null, prefix: null, queryParams: null };
+        this.data = {};
       },
 
       /**
@@ -410,7 +410,6 @@ the `app-route` will update `route.path`. This in-turn will update the
           this._pathEffector('tail', this.tail);
           this._notifyChange('tail');
         }
-
       }
     });
   })();
